@@ -1,4 +1,5 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   content: [
@@ -7,14 +8,248 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+    colors: {
+      background: '#ffffff',
+      backgroundSub: '#f0f0f0',
+      black: '#000000',
+      white: '#ffffff',
+      primary: '#276ef1',
+      secondary: '#7da8f7',
+      tertiary: '#f2f7ff',
+      warning: '#e82209',
+      borderTransparent: '#898989',
+      process: '#ffb930',
+      processSub: '#fff7dd',
+      dim: '#000000',
+      dimForGallery: '#000000',
+      contents: {
+        contentMain: '#000000',
+        contentSub: '#6b6b6b',
+        contentThird: '#a6a6a6',
+      },
+      border: { borderMain: '#898989', borderSub: '#898989' },
+      blue: {
+        '100': '#d4e2fc',
+        '200': '#a9c5f9',
+        '300': '#7da8f7',
+        '400': '#528bf4',
+        '500': '#276ef1',
+        '600': '#1f58c1',
+        '700': '#174291',
+        '800': '#102c60',
+        '900': '#081630',
+      },
+      red: {
+        '100': '#fad3ce',
+        '200': '#f6a69c',
+        '300': '#f17a6b',
+        '400': '#ed4e3a',
+        '500': '#e82209',
+        '600': '#ba1b07',
+        '700': '#8b1405',
+        '800': '#5d0d03',
+        '900': '#2e0702',
+      },
+      gray: {
+        '100': '#e1e1e1',
+        '200': '#c4c4c4',
+        '300': '#a6a6a6',
+        '400': '#898989',
+        '500': '#6b6b6b',
+        '600': '#565656',
+        '700': '#404040',
+        '800': '#2b2b2b',
+        '900': '#151515',
+      },
+      guide: { yellow: '#ffe600', green: '#048848', done: '#bc1d9a' },
+      etc: {
+        'blue-007AFF': '#007aff',
+        'gray-3C3C43': '#3c3c43',
+        'gray-F2F2F2': '#f2f2f2',
       },
     },
+    fontSize: {
+      '2xs': '0.625rem',
+      xs: '0.75rem',
+      sm: '0.875rem',
+      base: '1rem',
+      lg: '1.3329999446868896rem',
+      xl: '1.7768750190734863rem',
+      '2xl': '2.3685624599456787rem',
+      '3xl': '3.1573123931884766rem',
+    },
+    fontFamily: { pretendard: 'Pretendard' },
+    borderRadius: {
+      none: '0',
+      xs: '0.03125rem',
+      sm: '0.0625rem',
+      default: '0.0833333358168602rem',
+      lg: '0.125rem',
+      xl: '0.1666666716337204rem',
+      '2xl': '0.25rem',
+      '3xl': '0.3125rem',
+      '4xl': '0.43312498927116394rem',
+      '5xl': '0.4751088321208954rem',
+      '6xl': '0.5rem',
+      '7xl': '0.5568749904632568rem',
+      '8xl': '0.625rem',
+      '9xl': '0.6875rem',
+      '10xl': '0.8125rem',
+      '11xl': '0.875rem',
+      '12xl': '0.9285714030265808rem',
+      '13xl': '0.9375rem',
+      '14xl': '1.125rem',
+      '15xl': '1.25rem',
+      '16xl': '3.125rem',
+      full: '9999px',
+    },
   },
-  plugins: [],
-}
-export default config
+
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.caption-xs': {
+          fontFamily: '"Pretendard-Regular", sans-serif',
+          fontSize: '12px',
+          letterSpacing: '0',
+          lineHeight: '1',
+          textDecoration: 'underline',
+        },
+        '.caption-2xs': {
+          fontFamily: '"Pretendard-Regular", sans-serif',
+          fontSize: '10px',
+          letterSpacing: '0',
+          lineHeight: '1',
+          textDecoration: 'underline',
+        },
+        '.heading-3xl': {
+          fontFamily: '"Pretendard-Bold", sans-serif',
+          fontSize: '50.517px',
+          letterSpacing: '0',
+          lineHeight: '1.4',
+        },
+        '.heading-2xl': {
+          fontFamily: '"Pretendard-Bold", sans-serif',
+          fontSize: '37.897px',
+          letterSpacing: '0',
+          lineHeight: '1.4',
+        },
+        '.heading-xl': {
+          fontFamily: '"Pretendard-Bold", sans-serif',
+          fontSize: '28.43px',
+          letterSpacing: '0',
+          lineHeight: '1.4',
+        },
+        '.heading-lg': {
+          fontFamily: '"Pretendard-Bold", sans-serif',
+          fontSize: '21.328px',
+          letterSpacing: '0',
+          lineHeight: '1.4',
+        },
+        '.heading-md': {
+          fontFamily: '"Pretendard-Bold", sans-serif',
+          fontSize: '16px',
+          letterSpacing: '0',
+          lineHeight: '1.4',
+        },
+        '.heading-sm': {
+          fontFamily: '"Pretendard-Bold", sans-serif',
+          fontSize: '14px',
+          letterSpacing: '0',
+          lineHeight: '1.4',
+        },
+        '.heading-xs': {
+          fontFamily: '"Pretendard-Bold", sans-serif',
+          fontSize: '12px',
+          letterSpacing: '0',
+          lineHeight: '1.4',
+        },
+        '.heading-2xs': {
+          fontFamily: '"Pretendard-Bold", sans-serif',
+          fontSize: '10px',
+          letterSpacing: '0',
+          lineHeight: '1.4',
+        },
+        '.label-2xl': {
+          fontFamily: '"Pretendard-SemiBold", sans-serif',
+          fontSize: '37.897px',
+          letterSpacing: '0',
+          lineHeight: '1.5',
+        },
+        '.label-xl': {
+          fontFamily: '"Pretendard-SemiBold", sans-serif',
+          fontSize: '28.43px',
+          letterSpacing: '0',
+          lineHeight: '1.5',
+        },
+        '.label-lg': {
+          fontFamily: '"Pretendard-SemiBold", sans-serif',
+          fontSize: '21.328px',
+          letterSpacing: '0',
+          lineHeight: '1.5',
+        },
+        '.label-md': {
+          fontFamily: '"Pretendard-SemiBold", sans-serif',
+          fontSize: '16px',
+          letterSpacing: '0',
+          lineHeight: '1.5',
+        },
+        '.label-sm': {
+          fontFamily: '"Pretendard-SemiBold", sans-serif',
+          fontSize: '14px',
+          letterSpacing: '0',
+          lineHeight: '1.5',
+        },
+        '.label-xs': {
+          fontFamily: '"Pretendard-SemiBold", sans-serif',
+          fontSize: '12px',
+          letterSpacing: '0',
+          lineHeight: '1.5',
+        },
+        '.label-2xs': {
+          fontFamily: '"Pretendard-SemiBold", sans-serif',
+          fontSize: '10px',
+          letterSpacing: '0',
+          lineHeight: '1.5',
+        },
+        '.paragraph-xl': {
+          fontFamily: '"Pretendard-Regular", sans-serif',
+          fontSize: '28.43px',
+          letterSpacing: '0',
+          lineHeight: '1.6',
+        },
+        '.paragraph-lg': {
+          fontFamily: '"Pretendard-Regular", sans-serif',
+          fontSize: '21.328px',
+          letterSpacing: '0',
+          lineHeight: '1.6',
+        },
+        '.paragraph-md': {
+          fontFamily: '"Pretendard-Regular", sans-serif',
+          fontSize: '16px',
+          letterSpacing: '0',
+          lineHeight: '1.6',
+        },
+        '.paragraph-sm': {
+          fontFamily: '"Pretendard-Regular", sans-serif',
+          fontSize: '14px',
+          letterSpacing: '0',
+          lineHeight: '1.6',
+        },
+        '.paragraph-xs': {
+          fontFamily: '"Pretendard-Regular", sans-serif',
+          fontSize: '12px',
+          letterSpacing: '0',
+          lineHeight: '1.6',
+        },
+        '.paragraph-2xs': {
+          fontFamily: '"Pretendard-Regular", sans-serif',
+          fontSize: '10px',
+          letterSpacing: '0',
+          lineHeight: '1.6',
+        },
+      });
+    }),
+  ],
+};
+export default config;
